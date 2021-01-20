@@ -20,3 +20,7 @@ jobs:
     inputs:
       targetPath: jmeter/report
       artifact: jmeter
+  - task: publishhtmlreport@1
+    inputs:
+      htmlType: 'genericHTML'
+      JmeterReportsPath: 'jmeter\report'
