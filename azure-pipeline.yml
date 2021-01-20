@@ -15,12 +15,13 @@ jobs:
       arguments: '$PWD sample.jmx $(host)'
       workingDirectory: jmeter
       failOnStderr: false
+  - task: publishhtmlreport@1
+    inputs:
+      htmlType: 'genericHTML'
+      JmeterReportsPath: '$(Build.Repository.LocalPath)\jmeter\report'    
   - task: PublishPipelineArtifact@1
     displayName: Publish JMeter Report
     inputs:
       targetPath: jmeter/report
       artifact: jmeter
-  - task: publishhtmlreport@1
-    inputs:
-      htmlType: 'genericHTML'
-      JmeterReportsPath: '$(Build.Repository.LocalPath)\jmeter\report'
+  
