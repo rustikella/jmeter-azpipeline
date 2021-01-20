@@ -4,7 +4,7 @@ variables:
 jobs:
 - job: jmeter
   pool:
-    vmImage: Default_Linux
+    name: Default_Linux
   displayName: Run JMeter tests
   steps:
   - task: Bash@3
